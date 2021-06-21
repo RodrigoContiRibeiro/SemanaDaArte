@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*teste {
+    font-family: 'Pridi', serif;
+    font-family: 'Righteous', cursive;
+} */
+
+@font-face {
+  font-family: "Futura Book";
+  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Futura Bold";
+  src: url("http://localhost:8080/fonts/futura/FuturaHeavy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura Italic";
+  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf")
+    format("truetype");
+}
+
+header.header {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #212121;
+}
+
+.headerContainer {
+  width: fit-content;
+  width: -moz-fit-content;
+  height: fit-content;
+  height: -moz-fit-content;
+}
+
+.headerText {
+  margin: 0;
+  font-family: "Futura Bold";
+  font-size: calc(1.5rem + 1.5vw);
+  color: #fafafa;
+  letter-spacing: 3px;
+}
+
+main.main {
+    height: 90vh;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.mainContainer #firstBtnBox{
+    background: url("http://localhost:8080/images/imgUrbana.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.mainContainer #secondBtnBox {
+    background: url("http://localhost:8080/images/imgPop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.boxButton {
+    width: 50%;
+    position: relative;
+}
+
+.boxButton img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(2px) grayscale(75%);
+    transition: all 0.5s cubic-bezier(.17,.67,.83,.67);
+}
+
+.boxButton img:hover {
+    opacity: 0 !important;
+}
+
+.imgBtn {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+
+    border: none;
+    width: 35%;
+    height: 10%;
+
+    background: #212127;
+    color: #fafafa;
+
+    font-family: "Futura Bold";
+    font-size: calc(1rem + 1vw);
+}
+
+.imgBtn:hover {
+    background: #fafafa;
+    color: #212127;
+    transition: all 0.25s cubic-bezier(.17,.67,.83,.67);
+}
