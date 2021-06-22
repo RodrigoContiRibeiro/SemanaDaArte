@@ -10,10 +10,7 @@ public class IndexController {
     public String index() {
         return "index";
     }
-<<<<<<< HEAD
 
     @GetMapping("/sobreNos")
     public String sobreNos(){ return "sobreNos"; }
-=======
->>>>>>> 073d52ca3b0a525155d60fce924613b0f7ba5f8d
 }
