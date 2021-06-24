@@ -169,11 +169,10 @@ main.main {
     text-align: center;
     height: 60%;
     margin: 8vh 8vw;
-    padding: 0vh 4vw;
+    padding: 2.5vh 2.5vw;
 }
 .mainBoxSobre{
     height: 30vw;
-    padding: 0vh 4vh;
 }
 .mainHeaderSobre{
     font-weight: bold;
@@ -182,5 +181,5 @@ main.main {
 }
 .mainTextSobre{
     text-align: initial;
-    margin-top: 8vh;
+    margin-top: 7vh;
 }
