@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Futura Book";
+  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
+    format("truetype");
+}
+
+main.mainPesquisa {
+    background: ulr("http://localhost:8080/images/urbanArtBg.png");
+}
+main.mainPesquisa > img{
+    width: 100%;
+    height: 300%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    filter: blur(2px);
+}
+
+main.mainPesquisa > img.img2 {
+    width: 100%;
+    height: 300%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -2;
+    filter: blur(2px);
+}
+
+article.article {
+    width: 75vw;
+    margin: 0 auto;
+    padding-top: 5vh;
+}
+
+article.article div.articleContent {
+    background: #ffffff;
+    padding: 2.5vh 7.5vw;
+}
+
+p.textoPequisa {
+    font-family: "Futura Book";
+    color: #292929;
+    text-align: justify;
+    font-size: 21px;
+    line-height: 30px;
+    letter-spacing: 0.5px;
+}

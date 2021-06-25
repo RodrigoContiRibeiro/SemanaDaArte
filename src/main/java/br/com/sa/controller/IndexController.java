@@ -12,5 +12,12 @@ public class IndexController {
     }
 
     @GetMapping("/sobreNos")
-    public String sobreNos(){ return "sobreNos"; }
+    public String sobreNos(){
+        return "sobreNos";
+    }
+
+    @GetMapping("/pesquisa/urbArt")
+    public String pesquisaUrban() {
+        return "urbanArt";
+    }
 }
