@@ -32,9 +32,11 @@
 <main class="main">
     <div class="mainContainer">
         <div class="boxButton" id="firstBtnBox">
+            <a th:href="@{/pesquisa/urbArt}">
             <button class="imgBtn" onmouseenter="mouseEnterHandler(event)" onmouseleave="mouseLeaverHandler(event)">
                 Urban Art
             </button>
+            </a>
             <img th:src="@{/images/imgUrbana.png}">
         </div>
         <div class="boxButton" id="secondBtnBox">

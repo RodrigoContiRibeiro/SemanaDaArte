@@ -5,42 +5,50 @@
 }
 
 main.mainPesquisa {
-    background: ulr("http://localhost:8080/images/urbanArtBg.png");
-}
-main.mainPesquisa > img{
-    width: 100%;
-    height: 300%;
-    object-fit: cover;
-    position: absolute;
-    z-index: -1;
-    filter: blur(2px);
-}
-
-main.mainPesquisa > img.img2 {
-    width: 100%;
-    height: 300%;
-    object-fit: cover;
-    position: absolute;
-    z-index: -2;
-    filter: blur(2px);
+    background: url("http://localhost:8080/images/urbanArtBg.png");
+    background-size: cover;
 }
 
 article.article {
-    width: 75vw;
+    width: 80vw;
     margin: 0 auto;
-    padding-top: 5vh;
+}
+
+h1.pesquisaTitle {
+    font-family: "Futura Book";
+    color: #292929;
+    font-weight: bold;
+    letter-spacing: 0.6px;
+    margin-bottom: 6vh;
+}
+
+img.articleImg {
+    width: 100%;
+}
+
+div.autor {
+    font-family: "Futura Book";
+    color: #292929;
+    font-size: calc(1rem + 1vw);
+    text-align: right;
+    margin: 6vh 0;
+}
+
+span.autorNome {
+    color: #722ED1;
+    font-weight: bold;
 }
 
 article.article div.articleContent {
     background: #ffffff;
-    padding: 2.5vh 7.5vw;
+    padding: 6vh 7.5vw;
 }
 
 p.textoPequisa {
     font-family: "Futura Book";
     color: #292929;
     text-align: justify;
-    font-size: 21px;
+    font-size: calc(1.75vh + 0.5rem);
     line-height: 30px;
     letter-spacing: 0.5px;
 }
