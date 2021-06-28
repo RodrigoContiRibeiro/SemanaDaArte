@@ -167,54 +167,65 @@ main.main {
     transition: all 0.25s cubic-bezier(.17,.67,.83,.67);
     border-bottom-color: #d3adf7;
 }
-
-.footerContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    height: 100%;
-    background:#121212;
-    color:#fafafa;
-    padding-top: 2.5vh;
-    padding-bottom: 2.5vh;
-}
-.footerHeader{
-    font-size: 3vh;
-    list-style: none;
-    margin-bottom: 0.5rem !important;
-}
-.footerContent{
-    margin-bottom:0.1rem !important;
-    font-size: 1.8vh;
-    list-style: none;
-
-}
-.footerContentbatata{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100px;
-}
-.mainContainerSobre{
+.footerContainer{
+    width:100%;
     background-color: #121212;
+    padding: 70px 0;
+}
+
+.footerContent{
+    background-color: #121212;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin: auto auto;
+    font-family: "Futura Book";
+}
+
+.senaiConainer{
+}
+.imgSenai{
+    width:92%;
+}
+.pSenai{
     color: #fafafa;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 60%;
-    margin: 8vh 8vw;
-    padding: 2.5vh 2.5vw;
+    margin: 0;
+    padding:0;
+    font-size:22px;
+    line-height:26px;
+    margin: 10px 0;
 }
-.mainBoxSobre{
-    height: 30vw;
+.pSenaiTitle {
+    font-weight:bold;
 }
-.mainHeaderSobre{
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: calc(0.9rem + 0.9vw);
+
+
+.txtContato, .txtMembros{
+    color: #fafafa;
+    font-family: "Futura Book";
+    height:100%;
 }
-.mainTextSobre{
-    text-align: initial;
-    margin-top: 7vh;
+.ulContato, .ulMembros{
+    color: #fafafa;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height:100%;
+    font-size: 22px;
 }
+.titleContato, .titleMembros{
+    color: #fafafa;
+    font-weight:bold;
+
+    height:100%;
+}
+.liContato, .liMembros{
+    color: #fafafa;
+
+    line-height: 36px;
+    height:100%;
+}
+
+

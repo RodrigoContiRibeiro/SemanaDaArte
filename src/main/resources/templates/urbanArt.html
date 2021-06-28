@@ -31,7 +31,6 @@
     </div>
 </header>
 <main class="mainPesquisa">
-    <img th:src="@{/images/urbanArtBg.png}" class="articleImg">
     <article class="article">
         <div class="articleContent">
             <h1 class="pesquisaTitle">Pesquisa sobre arte urbana</h1>
@@ -81,23 +80,32 @@
     </article>
 </main>
 <div class="footerContainer">
-    <div class="footerColaboradores">
-        <ul>
-            <li class="footerHeader">Membros</li>
-            <li class="footerContent">Claudio Conti Ribeiro</li>
-            <li class="footerContent">Igor Borba Fraga</li>
-            <li class="footerContent">Rodrigo Conti Ribeiro</li>
-        </ul>
-    </div>
-    <div class="footerProfessores">
-        <ul>
-            <li class="footerHeader">PROFESSORES</li>
-            <li class="footerContent">Arthur Vinicius Anorozo</li>
-            <li class="footerContent">Bruno Bandeira Fernandes</li>
-            <li class="footerContent">Gabriela Moreira Guadalupe</li>
-            <li class="footerContent">Paulo Eduardo Battistella</li>
-            <li class="footerContent">Raoni Damiano Soares</li>
-        </ul>
+    <div class="footerContent">
+        <div class="senaiContainer">
+            <img class="imgSenai" th:src="@{/images/sesiSenai.png}">
+            <p class="pSenai">
+                <span class="pSenaiTitle">Federação das Indústrias do Estado
+                de<br>Santa Catarina</span><br>
+                Rodovia, SC-401, 3730 - Saco Grande,<br>
+                Florianópolis - SC, 88032-005
+            </p>
+        </div>
+        <div class="txtContato">
+            <ul class="ulContato">
+                <li class="titleContato">CONTATO</li>
+                <li class="liContato">claudio_ribeiro2@estudante.sc.senai.br</li>
+                <li class="liContato">igor_fraga@estudante.sc.senai.br</li>
+                <li class="liContato">rodrigo_c_ribeiro@estudante.sc.senai.br</li>
+            </ul>
+        </div>
+        <div class="txtMembros">
+            <ul class="ulMembros">
+                <li class="titleMembros">MEMBROS</li>
+                <li class="liMembros">Claudio Conti Ribeiro</li>
+                <li class="liMembros">Igor Borba Fraga</li>
+                <li class="liMembros">Rodrigo Conti Ribeiro</li>
+            </ul>
+        </div>
     </div>
 </div>
 <!-- Importando os scripts do bootstrap -->
