@@ -44,32 +44,36 @@ header.header {
   flex-grow: 1;
   width: fit-content;
   width: -moz-fit-content;
-  height: fit-content;
-  height: -moz-fit-content;
+  height: calc(1.5rem + 1.5vw);
   padding-left: 4rem;
   color: #fafafa;
+
 }
+
 
 .headerContainer02{
     height: calc(1.5rem + 1.5vw);;
     color: #fafafa;
-    font-size: calc(0.66vw + 0.66rem);
+    font-size: calc(1vw + 0.66rem);
     font-weight: bold;
     margin-right: 2rem;
-    text-transform: capitalize;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid #b37feb;
+    text-transform: lowercase;
 }
 
 .headerLink02 {
     text-decoration: none;
     height: 100%;
+    line-height: 100%;
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
-.headerContainer02:hover {
-    border-top: 3px solid #b37feb;
+.headerContainer02:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #d3adf7;
 }
 
 .headerText {
@@ -78,15 +82,22 @@ header.header {
   font-size: calc(1.5rem + 1.5vw);
   color: #fafafa;
   letter-spacing: 3px;
+  height: 100%;
+}
+
+.headerLink01:hover::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #d3adf7;
+    margin-top: -8px;
 }
 
 .headerLink01 {
+    display: inline-block;
+    height: 100%;
     text-decoration: none;
-    border-bottom: 3px solid transparent;
-}
-
-.headerLink01:hover {
-    border-bottom: 3px solid #b37feb;
 }
 
 main.main {
@@ -140,6 +151,8 @@ main.main {
     border: none;
     width: 35%;
     height: 10%;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
 
     background: #212127;
     color: #fafafa;
@@ -152,7 +165,9 @@ main.main {
     background: #fafafa;
     color: #212127;
     transition: all 0.25s cubic-bezier(.17,.67,.83,.67);
+    border-bottom-color: #d3adf7;
 }
+
 .footerContainer {
     display: flex;
     flex-direction: row;
