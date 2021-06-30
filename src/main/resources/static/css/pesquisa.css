@@ -14,6 +14,13 @@ article.article {
     margin: 0 auto;
 }
 
+article.article div.articleContent {
+    background: #ffffff;
+    padding: 0 7.5vw;
+    padding-top: 6vh;
+    padding-bottom: 26.9vh;
+}
+
 h1.pesquisaTitle {
     font-family: "Futura Book";
     color: #292929;
@@ -57,12 +64,6 @@ span.autorNome::after {
     height: 2px;
     background: #d3adf7;
 }
-
-article.article div.articleContent {
-    background: #ffffff;
-    padding: 6vh 7.5vw;
-}
-
 p.textoPequisa {
     font-family: "Futura Book";
     color: #292929;
@@ -70,5 +71,6 @@ p.textoPequisa {
     font-size: calc(1.75vh + 0.5rem);
     line-height: 30px;
     letter-spacing: 0.5px;
+    text-indent: 50px;
 }
 

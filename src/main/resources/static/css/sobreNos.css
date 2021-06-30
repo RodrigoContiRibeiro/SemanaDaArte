@@ -16,16 +16,23 @@
 }
 
 .mainSobre{
- /* Colocar o background */
-}
+    /* background */
+     background: url("http://localhost:8080/images/urbanArtBg02.jpg");
+     background-size: cover;
+     height: auto;
+ }
+
 .articleSobre{
-    width: 100vh;
-    height: 90vh;
+    width: 80vw;
     margin: 0 auto;
+    padding: 10vh 0;
 }
 
 .contentSobre{
-    padding: 6vh 7.5vw;
+    background: #ffffff;
+    padding: 0 7.5vw;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
 }
 
 .titleSobre{
@@ -46,6 +53,26 @@
     background: #d3adf7;
 }
 
+.autorSobre{
+    font-family: "Futura Book";
+    color: #292929;
+    font-size: calc(0.5rem + 1.5vw);
+    text-align: left;
+    margin: 3vh 0;
+}
+
+.autorTxtSobre{
+    font-weight: bold;
+    display: inline-block;
+}
+span.autorTxtSobre::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #d3adf7;
+}
+
 .txtSobre{
     font-family: "Futura Book";
     color: #292929;
@@ -53,4 +80,6 @@
     font-size: calc(1.75vh + 0.5rem);
     line-height: 30px;
     letter-spacing: 0.5px;
+    text-indent: 50px;
+    text-align: justify;
 }
