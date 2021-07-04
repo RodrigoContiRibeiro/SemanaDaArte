@@ -1,23 +1,23 @@
 @font-face {
   font-family: "Futura Book";
-  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
+  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBook.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "Futura Bold";
-  src: url("http://localhost:8080/fonts/futura/FuturaHeavy.ttf") format("truetype");
+  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/FuturaHeavy.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Futura Italic";
-  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf")
+  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBookItalic.ttf")
     format("truetype");
 }
 
 .mainSobre{
     /* background */
-     background: url("http://localhost:8080/images/urbanArtBg02.jpg");
+     background: url("https://marvelous-crater-lake-30689.herokuapp.com/images/urbanArtBg02.jpg");
      background-size: cover;
      height: auto;
  }

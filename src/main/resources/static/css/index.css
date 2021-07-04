@@ -10,18 +10,18 @@
 
 @font-face {
   font-family: "Futura Book";
-  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
+  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBook.ttf")
     format("truetype");
 }
 
 @font-face {
   font-family: "Futura Bold";
-  src: url("http://localhost:8080/fonts/futura/FuturaHeavy.ttf") format("truetype");
+  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/FuturaHeavy.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Futura Italic";
-  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf")
+  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBookItalic.ttf")
     format("truetype");
 }
 
@@ -112,14 +112,14 @@ main.main {
 }
 
 .mainContainer #firstBtnBox{
-    background: url("http://localhost:8080/images/imgUrbana.png");
+    background: url("https://marvelous-crater-lake-30689.herokuapp.com/images/imgUrbana.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .mainContainer #secondBtnBox {
-    background: url("http://localhost:8080/images/imgPop.jpg");
+    background: url("https://marvelous-crater-lake-30689.herokuapp.com/images/imgPop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
