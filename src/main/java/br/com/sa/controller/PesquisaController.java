@@ -21,26 +21,26 @@ public class PesquisaController {
     @Autowired
     PesquisaServiceImpl pesquisaService;
 
-    @GetMapping("/pesquisa/add")
+    @GetMapping("pesquisa/add")
     public String add(Model model) {
         model.addAttribute("pesquisa", new Pesquisa());
-        return "/pesquisa/add";
+        return "pesquisa/add";
     }
 
     ;
 
-    @PostMapping("/pesquisa/save")
+    @PostMapping("pesquisa/save")
     public String save(Model model, Pesquisa pesquisa,
                        @RequestParam("imagem") MultipartFile multipartFile) throws IOException {
         pesquisa.setImage(Base64.encodeBase64String(multipartFile.getBytes()));
         pesquisaService.save(pesquisa);
         model.addAttribute("pesquisa", pesquisa);
-        return "/pesquisa/add";
+        return "pesquisa/add";
     }
 
-    @GetMapping("/pesquisa/view/{id}")
+    @GetMapping("pesquisa/view/{id}")
     public String view(Model model, @PathVariable Long id) {
         model.addAttribute("pesquisa", pesquisaService.findById(id));
-        return "/pesquisa/view";
+        return "pesquisa/view";
     }
 }
