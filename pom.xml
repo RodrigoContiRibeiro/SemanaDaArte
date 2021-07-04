@@ -14,7 +14,6 @@
     <name>sa</name>
     <description>SA dos alunos do terceiro ano</description>
     <properties>
-        <java.version>11</java.version>
     </properties>
     <dependencies>
         <dependency>
