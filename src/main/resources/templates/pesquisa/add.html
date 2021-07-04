@@ -9,6 +9,7 @@
           th:href="@{/images/icone240.svg}">
     <!-- Importando a folha de estilo própria -->
     <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/pesquisaAdd.css}">
 </head>
 <body>
 <header class="header">
@@ -23,21 +24,44 @@
         </a>
     </div>
 </header>
-<main class="main">
-    <div class="mainContainer">
-        <div class="boxButton" id="firstBtnBox">
-            <button class="imgBtn" onclick="window.location='/pesquisa/urbArt'" onmouseenter="mouseEnterHandler(event)"
-                    onmouseleave="mouseLeaverHandler(event)">
-                Urban Art
-            </button>
-            <img th:src="@{/images/imgUrbana.png}">
-        </div>
-        <div class="boxButton" id="secondBtnBox">
-            <button class="imgBtn" onmouseenter="mouseEnterHandler(event)" onmouseleave="mouseLeaverHandler(event)">
-                Pop Art
-            </button>
-            <img th:src="@{/images/imgPop.jpg}">
-        </div>
+<main class="mainAddPesquisa">
+    <div class="mainAddPesquisaContent">
+        <form
+                action="#"
+                th:action="@{/pesquisa/save}"
+                method="post"
+                th:object="${pesquisa}"
+                enctype="multipart/form-data"
+        >
+            Id:
+            <input
+                    type="number"
+                    disabled
+                    th:field="*{id}"
+            >
+            Autor
+            <input
+                    type="text"
+                    th:field="*{author}"
+                    required
+            >
+            titulo
+            <input
+                    type="text"
+                    th:field="*{title}"
+                    required
+            >
+            parágrafos
+            <textarea
+                    cols="50"
+                    rows="10"
+                    th:field="*{paragraphs}"
+                    required
+            ></textarea>
+            imagem
+            <input type="file" name="imagem" accept="image/png, image/jpeg">
+            <button type="submit">salvar</button>
+        </form>
     </div>
 </main>
 <div class="footerContainer">

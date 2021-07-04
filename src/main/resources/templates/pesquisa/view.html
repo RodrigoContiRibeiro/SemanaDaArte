@@ -7,14 +7,19 @@
     <link rel="icon"
           type="images/svg"
           th:href="@{/images/icone240.svg}">
-    <!-- Importando a folha de estilo própria -->
     <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/pesquisa.css}">
+    <style th:inline="text">
+        .mainPesquisa {
+            background: url("data:image/png;base64,[[${pesquisa.image}]]");
+        }
+    </style>
 </head>
 <body>
 <header class="header">
     <div class="headerContainer">
         <h1 class="headerText">
-            <a class="headerLink01" th:href="@{/}" style="text-decoration:none;">Semana Da Arte</a>
+            <a class="headerLink01" th:href="@{/}">Semana Da Arte</a>
         </h1>
     </div>
     <div class="headerContainer02">
@@ -23,22 +28,17 @@
         </a>
     </div>
 </header>
-<main class="main">
-    <div class="mainContainer">
-        <div class="boxButton" id="firstBtnBox">
-            <button class="imgBtn" onclick="window.location='/pesquisa/urbArt'" onmouseenter="mouseEnterHandler(event)"
-                    onmouseleave="mouseLeaverHandler(event)">
-                Urban Art
-            </button>
-            <img th:src="@{/images/imgUrbana.png}">
+<main class="mainPesquisa">
+    <article class="article">
+        <div class="articleContent">
+            <h1 class="pesquisaTitle" th:text="${pesquisa.title}"></h1>
+            <div class="autor">
+                por <span class="autorNome" th:text="${pesquisa.author}"></span>
+            </div>
+            <p class="textoPequisa" th:text="${pesquisa.paragraphs}">
+            </p>
         </div>
-        <div class="boxButton" id="secondBtnBox">
-            <button class="imgBtn" onmouseenter="mouseEnterHandler(event)" onmouseleave="mouseLeaverHandler(event)">
-                Pop Art
-            </button>
-            <img th:src="@{/images/imgPop.jpg}">
-        </div>
-    </div>
+    </article>
 </main>
 <div class="footerContainer">
     <div class="footerContent">
