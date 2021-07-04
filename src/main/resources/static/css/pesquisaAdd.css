@@ -1,0 +1,8 @@
+div.mainAddPesquisaContent {
+    width: 80vw;
+    margin: 0 auto;
+}
+div.mainAddPesquisaContent form {
+    display: flex;
+    flex-direction: column;
+}

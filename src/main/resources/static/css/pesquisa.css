@@ -5,7 +5,6 @@
 }
 
 main.mainPesquisa {
-    background: url("http://localhost:8080/images/urbanArtBg.png");
     background-size: cover;
 }
 
@@ -72,5 +71,6 @@ p.textoPequisa {
     line-height: 30px;
     letter-spacing: 0.5px;
     text-indent: 50px;
+    white-space: pre-line;
 }
 
