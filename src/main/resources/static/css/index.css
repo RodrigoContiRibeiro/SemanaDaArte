@@ -10,19 +10,21 @@
 
 @font-face {
   font-family: "Futura Book";
-  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBook.ttf")
-    format("truetype");
+  /*src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBook.ttf") format("truetype");*/
+  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf") format("truetype");
+
 }
 
 @font-face {
   font-family: "Futura Bold";
-  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/FuturaHeavy.ttf") format("truetype");
+  src: url("http://localhost:8080/fonts/futura/futuraBold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Futura Italic";
-  src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBookItalic.ttf")
-    format("truetype");
+  /*src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBookItalic.ttf") format("truetype");*/
+  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf") format("truetype");
+
 }
 
 a{
@@ -44,19 +46,16 @@ header.header {
   flex-grow: 1;
   width: fit-content;
   width: -moz-fit-content;
-  height: calc(1.5rem + 1.5vw);
-  padding-left: 4rem;
+  padding-left: 4vw;
   color: #fafafa;
 
 }
 
-
 .headerContainer02{
-    height: calc(1.5rem + 1.5vw);;
     color: #fafafa;
-    font-size: calc(1vw + 0.66rem);
-    font-weight: bold;
-    margin-right: 2rem;
+    height: 46px;
+    font-size: 25px;
+    margin-right: 2vw;
     text-transform: lowercase;
 }
 
@@ -65,11 +64,12 @@ header.header {
     text-decoration: none;
     height: 100%;
     line-height: 100%;
+    letter-spacing: 1.5px;
     display: flex;
     align-items: flex-end;
 }
 
-.headerContainer02:hover::after {
+.headerContainer02::after {
     content: "";
     display: block;
     width: 100%;
@@ -80,24 +80,25 @@ header.header {
 .headerText {
   margin: 0 !important;
   font-family: "Futura Bold";
-  font-size: calc(1.5rem + 1.5vw);
+  font-size: 38px;
   color: #fafafa;
   letter-spacing: 3px;
-  height: 100%;
+  height: 46px;
+  width: max-content;
 }
 
-.headerLink01:hover::after {
+.headerText::after {
     content: "";
     display: block;
     width: 100%;
     height: 3px;
     background: #d3adf7;
-    margin-top: -8px;
 }
 
 .headerLink01 {
-    display: inline-block;
-    height: 100%;
+    height: 46px;
+    display: flex;
+    line-height: 58px;
     text-decoration: none;
 }
 
@@ -150,8 +151,8 @@ main.main {
     right: 50%;
     transform: translate(50%, -50%);
     border: none;
-    width: 35%;
-    height: 10%;
+    width: 45%;
+    height: 12.5%;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
 
@@ -159,7 +160,8 @@ main.main {
     color: #fafafa;
 
     font-family: "Futura Bold";
-    font-size: calc(1rem + 1vw);
+    letter-spacing: 4px;
+    font-size: 30px;
 }
 
 .imgBtn:hover {
@@ -171,62 +173,157 @@ main.main {
 .footerContainer{
     width:100%;
     background-color: #121212;
-    padding: 70px 0;
+    padding: 70px 2.5vw;
 }
 
 .footerContent{
     background-color: #121212;
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     margin: auto auto;
     font-family: "Futura Book";
 }
 
-.senaiConainer{
+.senaiContainer {
+    width: 313px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .imgSenai{
-    width:92%;
-}
-.pSenai{
-    color: #fafafa;
-    margin: 0;
-    padding:0;
-    font-size:22px;
-    line-height:26px;
-    margin: 10px 0;
-}
-.pSenaiTitle {
-    font-weight:bold;
+    width: 100%;
 }
 
+.pSenai {
+    width: 100%;
+    font-size: 18px;
+}
 
-.txtContato, .txtMembros{
+.ulContato, .ulMembros, .pSenai {
     color: #fafafa;
     font-family: "Futura Book";
-    height:100%;
-}
-.ulContato, .ulMembros{
-    color: #fafafa;
     list-style: none;
     margin: 0;
     padding: 0;
-    height:100%;
     font-size: 22px;
 }
-.titleContato, .titleMembros{
-    color: #fafafa;
-    font-weight:bold;
 
-    height:100%;
+.pSenaiTitle, .titleContato, .titleMembros {
+    font-weight: bold;
 }
+
 .liContato, .liMembros{
     color: #fafafa;
-
     line-height: 36px;
-    height:100%;
 }
 
-
+@media only screen and (max-width: 1165px) {
+    .senaiContainer {
+        width: 400px;
+    }
+    .ulContato, .ulMembros, .pSenai {
+        font-size: 21px
+    }
+}
+@media only screen and (max-width: 1115px) {
+    .senaiContainer {
+        width: 380px;
+    }
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 20px
+    }
+}
+@media only screen and (max-width: 1075px) {
+    .senaiContainer {
+        width: 350px;
+    }
+}
+@media only screen and (max-width: 1050px) {
+    .senaiContainer {
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 1010px) {
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5vh;
+    }
+    .senaiContainer, .txtContato, .txtMembros {
+        width: 80%;
+    }
+    .imgSenai {
+        width: 50%
+    }
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 22px
+    }
+}
+@media only screen and (max-width: 850px) {
+    .imgBtn {
+        font-size: 26px;
+        letter-spacing: 3px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .imgBtn {
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .imgSenai {
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .imgSenai {
+        width: 75%
+    }
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 20px
+    }
+    .mainContainer {
+        flex-direction: column;
+    }
+    .boxButton {
+        width: 100%;
+        height: 50%;
+    }
+    .imgBtn {
+        height: 20%;
+    }
+}
+@media only screen and (max-width: 485px) {
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 18px
+    }
+}
+@media only screen and (max-width: 440px) {
+    .headerText {
+        font-size: 34px
+    }
+    .headerContainer02 {
+        font-size: 22px;
+    }
+}
+@media only screen and (max-width: 445px) {
+    .imgSenai {
+        width: 80%
+    }
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 16px
+    }
+}
+@media only screen and (max-width: 350px) {
+    .headerText {
+        font-size: 30px
+    }
+    .headerContainer02 {
+        font-size: 18px;
+    }
+}
