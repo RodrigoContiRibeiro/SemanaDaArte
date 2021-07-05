@@ -69,7 +69,7 @@ header.header {
     align-items: flex-end;
 }
 
-.headerContainer02::after {
+.headerContainer02:hover::after {
     content: "";
     display: block;
     width: 100%;
@@ -87,7 +87,7 @@ header.header {
   width: max-content;
 }
 
-.headerText::after {
+.headerText:hover::after {
     content: "";
     display: block;
     width: 100%;
