@@ -1,8 +1,73 @@
-div.mainAddPesquisaContent {
-    width: 80vw;
-    margin: 0 auto;
+@font-face {
+  font-family: "Futura Book";
+  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
+    format("truetype");
 }
-div.mainAddPesquisaContent form {
+
+@font-face {
+  font-family: "Futura Bold";
+  src: url("http://localhost:8080/fonts/futura/FuturaHeavy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Futura Italic";
+  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf")
+    format("truetype");
+}
+main.mainAddPesquisa{
+    background: url("http://localhost:8080/images/backgroundUrban.png");
+    background-size: cover;
+    height: auto;
+    padding: 10vh;
+}
+
+div.main-container-pesquisa {
+    width: 35vw;
+    margin: 0 auto;
+    background: #fafafafa;
+    padding: 2vh 2vh;
+}
+h1.form-h1{
+    font-family: "Futura Book";
+    font-size: calc(1.0rem + 1.0vw);
+    text-align: center;
+    font-weight: bold;
+    padding: 3.5vh 0;
+}
+span.form-span{
+    font-family:"Futura Book";
+    font-size: calc(0.75rem + 0.75vh);
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+form.form-pesquisaAdd{
     display: flex;
     flex-direction: column;
 }
+input.form-input-id{
+    display: none;
+}
+input.form-input-autor{
+    width:100%;
+    height:10vh;
+    border-radius: 0px;
+    border: 1px solid #595959;
+    box-sizing: border-box;
+}
+input.form-input-autor:focus{
+    border-color: #6200EE;
+}
+input.form-input-titulo{
+}
+textarea.form-txtArea{
+
+}
+input.form-input-img{
+
+}
+button.form-btn-salvar{
+
+}
+
+

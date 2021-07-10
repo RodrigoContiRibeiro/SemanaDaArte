@@ -25,42 +25,47 @@
     </div>
 </header>
 <main class="mainAddPesquisa">
-    <div class="mainAddPesquisaContent">
+    <div class="main-container-pesquisa">
         <form
                 action="#"
                 th:action="@{/pesquisa/save}"
                 method="post"
                 th:object="${pesquisa}"
                 enctype="multipart/form-data"
+                class="form-pesquisaAdd"
         >
-            Id:
+                <h1 class="form-h1" >ADICIONAR UMA PESQUISA</h1>
             <input
                     type="number"
                     disabled
                     th:field="*{id}"
+                    class="form-input-id"
             >
-            Autor
+            <span class="form-span" >autor:</span>
             <input
                     type="text"
                     th:field="*{author}"
                     required
+                    class="form-input-autor"
             >
-            titulo
+            <span class="form-span" >titulo:</span>
             <input
                     type="text"
                     th:field="*{title}"
                     required
+                    class="form-input-titulo"
             >
-            parágrafos
+            <span class="form-span" >conteúdo:</span>
             <textarea
                     cols="50"
                     rows="10"
                     th:field="*{paragraphs}"
                     required
+                    class="form-txtArea"
             ></textarea>
-            imagem
-            <input type="file" name="imagem" accept="image/png, image/jpeg">
-            <button type="submit">salvar</button>
+            <span class="form-span" >imagem:</span>
+            <input type="file" name="imagem" accept="image/png, image/jpeg" class="form-input-img">
+            <button type="submit" class="form-btn-salvar" >salvar</button>
         </form>
     </div>
 </main>

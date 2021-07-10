@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 @Controller
-public class PesquisaController {
+public class    PesquisaController {
 
     @Autowired
     PesquisaServiceImpl pesquisaService;
