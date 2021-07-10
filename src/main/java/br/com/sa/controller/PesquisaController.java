@@ -25,9 +25,7 @@ public class    PesquisaController {
     public String add(Model model) {
         model.addAttribute("pesquisa", new Pesquisa());
         return "pesquisa/add";
-    }
-
-    ;
+    };
 
     @PostMapping("pesquisa/save")
     public String save(Model model, Pesquisa pesquisa,
