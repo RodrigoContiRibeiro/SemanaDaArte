@@ -24,48 +24,25 @@
         </a>
     </div>
 </header>
-<main class="mainAddPesquisa">
-    <div class="main-container-pesquisa">
-        <form
-                action="#"
-                th:action="@{/pesquisa/save}"
-                method="post"
-                th:object="${pesquisa}"
-                enctype="multipart/form-data"
-                class="form-pesquisaAdd"
-        >
-                <h1 class="form-h1" >ADICIONAR UMA PESQUISA</h1>
-            <input
-                    type="number"
-                    disabled
-                    th:field="*{id}"
-                    class="form-input-id"
-            >
-            <span class="form-span" >autor:</span>
-            <input
-                    type="text"
-                    th:field="*{author}"
-                    required
-                    class="form-input-autor"
-            >
-            <span class="form-span" >titulo:</span>
-            <input
-                    type="text"
-                    th:field="*{title}"
-                    required
-                    class="form-input-titulo"
-            >
-            <span class="form-span" >conteúdo:</span>
-            <textarea
-                    cols="50"
-                    rows="10"
-                    th:field="*{paragraphs}"
-                    required
-                    class="form-txtArea"
-            ></textarea>
-            <span class="form-span" >imagem:</span>
-            <input type="file" name="imagem" accept="image/png, image/jpeg" class="form-input-img">
-            <button type="submit" class="form-btn-salvar" >salvar</button>
+<main class="main-pesquisa">
+    <div class="div-pesquisa">
+        <form action="#" th:action="@{/pesquisa/save}" method="post" th:object="${pesquisa}" enctype="multipart/form-data" class="form-pesquisa">
+            <input type="number" disabled th:field="*{id}">
+            <div class="form-group">
+                <input type="text" th:field="*{author}" required class="form-input">
+                <span class="text-bar"></span>
+                <label class="form-label">Autor</label>
+            </div>
+            <div class="form-group">
+                <input type="text" th:field="*{title}" required class="form-input">
+                <span class="text-bar"></span>
+                <label class="form-label">Titulo</label>
+            </div>
+            <div class="form-group">
+                <input type="text" th:field="*{author}" required class="form-input">
+                <span class="text-bar"></span>
+                <textarea th:field="*{paragraphs}"required class="form-label"></textarea>
+            </div>
         </form>
     </div>
 </main>

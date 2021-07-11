@@ -1,4 +1,4 @@
-@font-face {
+ @font-face {
   font-family: "Futura Book";
   src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
     format("truetype");
@@ -21,53 +21,71 @@ main.mainAddPesquisa{
     padding: 10vh;
 }
 
-div.main-container-pesquisa {
-    width: 35vw;
-    margin: 0 auto;
-    background: #fafafafa;
-    padding: 2vh 2vh;
-}
-h1.form-h1{
-    font-family: "Futura Book";
-    font-size: calc(1.0rem + 1.0vw);
-    text-align: center;
-    font-weight: bold;
-    padding: 3.5vh 0;
-}
-span.form-span{
-    font-family:"Futura Book";
-    font-size: calc(0.75rem + 0.75vh);
-    text-align: left;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-form.form-pesquisaAdd{
-    display: flex;
-    flex-direction: column;
-}
-input.form-input-id{
-    display: none;
-}
-input.form-input-autor{
-    width:100%;
-    height:10vh;
-    border-radius: 0px;
-    border: 1px solid #595959;
-    box-sizing: border-box;
-}
-input.form-input-autor:focus{
-    border-color: #6200EE;
-}
-input.form-input-titulo{
-}
-textarea.form-txtArea{
 
+.form-group 			  {
+  position:relative;
+  margin-bottom:45px;
 }
-input.form-input-img{
+/* */
+.form-input {
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  border:none;
+  border-bottom:1px solid #d3adf7;
+}
+.form-input:focus {
+    outline:none;
+ }
 
+.form-label {
+  color:#121212;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
 }
-button.form-btn-salvar{
 
+.form-input:focus ~ .form-label, .form-input:valid ~ .form-label 		{
+  top:-20px;
+  font-size:14px;
+  color:#d3adf7;
 }
+
+.text-bar {
+    position:relative;
+    display:block;
+    width:300px;
+}
+
+.text-bar:before, .text-bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#d3adf7;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.text-bar:before {
+  left:50%;
+}
+
+.text-bar:after {
+  right:50%;
+}
+
+.form-input:focus ~ .text-bar:before, .form-input:focus ~ .text-bar:after {
+  width:50%;
+}
+
 
 
