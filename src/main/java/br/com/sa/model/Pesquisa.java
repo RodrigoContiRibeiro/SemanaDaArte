@@ -1,7 +1,6 @@
 package br.com.sa.model;
 
-
-import org.springframework.lang.Nullable;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -22,8 +21,9 @@ public class Pesquisa {
     private String paragraphs;
 
     @Lob
-    @Nullable
-    private String image;
+    @Type(type="org.hibernate.type.BinaryType")
+    @Column(name = "image", nullable = true)
+    private byte[] image;
 
     public Long getId() {
         return id;
@@ -57,11 +57,11 @@ public class Pesquisa {
         this.paragraphs = paragraphs;
     }
 
-    public String getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 

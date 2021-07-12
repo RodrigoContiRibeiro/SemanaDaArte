@@ -163,6 +163,8 @@ main.main {
     font-family: "Futura Bold";
     letter-spacing: 4px;
     font-size: 30px;
+
+    cursor: pointer;
 }
 
 .imgBtn:hover {
