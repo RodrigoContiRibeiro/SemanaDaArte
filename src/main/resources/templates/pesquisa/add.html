@@ -26,30 +26,27 @@
 </header>
 <main class="main-pesquisa">
     <div class="div-pesquisa">
-        <form action="#" th:action="@{/pesquisa/save}" method="post" th:object="${pesquisa}"
-              enctype="multipart/form-data" class="form-pesquisa">
-            <input type="number" disabled th:field="*{id}">
-            <div class="form-group">
-                <input type="text" th:field="*{author}" required class="form-input">
-                <span class="text-bar"></span>
-                <label class="form-label">Autor</label>
+        <form action="#" th:action="@{/pesquisa/save}" method="post" th:object="${pesquisa}" enctype="multipart/form-data" class="form-pesquisa">
+            <div class="form-field">
+                <div class="form-title">adicionar uma pesquisa</div>
+                <input type="number" disabled th:field="*{id}" class="input-id" >
+                <div class="form-group">
+                    <input type="text" th:field="*{author}" required class="form-input" id="autor" placeholder="Autor">
+                    <label class="form-label" for="autor">Autor</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" th:field="*{title}" required class="form-input" id="title" placeholder="Titulo">
+                    <label class="form-label" for="title">Titulo</label>
+                </div>
+                <div class="form-group">
+                    <textarea th:field="*{paragraphs}" required class="form-input" id="texto" placeholder="Texto" rows="6"></textarea>
+                    <label class="form-label" for="texto">Texto</label>
+                </div>
+                <div class="form-group">
+                    <input type="file" name="imagem" accept="image/png, image/jpeg" class="form-input-img" id="img" place>
+                </div>
+                <button type="submit" class="form-btn-salvar">salvar</button>
             </div>
-            <div class="form-group">
-                <input type="text" th:field="*{title}" required class="form-input">
-                <span class="text-bar"></span>
-                <label class="form-label">Titulo</label>
-            </div>
-            <div class="form-group">
-                <span class="text-bar"></span>
-                <textarea th:field="*{paragraphs}" required class="form-label"></textarea>
-                <label class="form-label">Parágrafos</label>
-            </div>
-            <div class="form-group">
-                <input type="file" name="imagem" accept="image/png, image/jpeg" class="form-input-img">
-                <span class="text-bar"></span>
-                <label class="form-label">Imagem</label>
-            </div>
-            <button type="submit" class="form-btn-salvar">salvar</button>
         </form>
     </div>
 </main>
