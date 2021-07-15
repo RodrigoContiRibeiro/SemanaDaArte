@@ -21,13 +21,17 @@ public class PesquisaController {
     @Autowired
     PesquisaServiceImpl pesquisaService;
 
+    @GetMapping("pesquisa/list")
+    public String list(Model model) {
+        model.addAttribute("pesquisas", pesquisaService.findAll());
+        return "pesquisa/list";
+    }
+
     @GetMapping("pesquisa/add")
     public String add(Model model) {
         model.addAttribute("pesquisa", new Pesquisa());
         return "pesquisa/add";
     }
-
-    ;
 
     @PostMapping("pesquisa/save")
     public String save(Model model, Pesquisa pesquisa,
@@ -50,5 +54,18 @@ public class PesquisaController {
     public String edit(Model model, @PathVariable Long id) {
         model.addAttribute("pesquisa", pesquisaService.findById(id));
         return "pesquisa/edit";
+    }
+
+    @GetMapping("pesquisa/delete/{id}")
+    public String delete(Model model, @PathVariable Long id) {
+        if (pesquisaService.deleteById(id)) {
+            model.addAttribute("succ", true);
+            model.addAttribute("msgSucc", "Salvou Corretamente");
+        } else {
+            model.addAttribute("erro", true);
+            model.addAttribute("msgErro", "Erro ao salvar");
+        }
+        model.addAttribute("pesquisas", pesquisaService.findAll());
+        return "pesquisa/list";
     }
 }

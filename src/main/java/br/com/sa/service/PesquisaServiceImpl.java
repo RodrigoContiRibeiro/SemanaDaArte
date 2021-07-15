@@ -5,11 +5,18 @@ import br.com.sa.repository.PesquisaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PesquisaServiceImpl implements PesquisaService {
 
     @Autowired
     PesquisaRepository pesquisaRepo;
+
+    @Override
+    public List<Pesquisa> findAll() {
+        return pesquisaRepo.findAll();
+    }
 
     @Override
     public boolean save(Pesquisa pesquisa) {
@@ -29,5 +36,16 @@ public class PesquisaServiceImpl implements PesquisaService {
     @Override
     public Pesquisa findById(Long id) {
         return pesquisaRepo.findById(id).orElse(new Pesquisa());
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        try {
+            pesquisaRepo.deleteById(id);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
+        return true;
     }
 }

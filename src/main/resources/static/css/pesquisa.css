@@ -72,5 +72,6 @@ p.textoPequisa {
     letter-spacing: 0.5px;
     text-indent: 50px;
     white-space: pre-line;
+    word-wrap: break-word;
 }
 
