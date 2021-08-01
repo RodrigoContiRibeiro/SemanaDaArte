@@ -1,3 +1,80 @@
+.listMain {
+    width: 80%;
+    min-height: 80vh;
+
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.msgSucc, .msgErro {
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.msgErroText, .msgSuccText {
+    font-family: "Futura Book";
+    font-size: 1.5rem;
+}
+
+.msgSuccText {
+    color: #73d13d;
+}
+
+.msgErroText {
+    color: #ff4d4f;
+}
+
+.addContainer {
+    width: 80%;
+    height: 80px;
+
+    margin: 0 auto 50px;
+    padding: 15px 35px;
+
+    box-shadow: 0px 0px 25px 0px #12121240;
+}
+
+.addContent {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addIcon {
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
+
+.line {
+    background: #D3ADF7;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.line.vertical {
+    transform: translate(-50%,-50%) rotate(90deg);
+}
+
+.addLink {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.addText {
+  font-family: "Futura Bold";
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px
+}
+
 .cards {
     width: 80%;
     margin: 0 auto;
@@ -8,9 +85,16 @@
 }
 
 .cardContent {
+    height: 150px;
+
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+
+    padding: 0 40px;
+
+    box-shadow: 0px 4px 25px 0px #12121240;
 }
 
 .icons {
@@ -18,4 +102,151 @@
     flex-direction: row;
     align-items: center;
     gap: 40px
+}
+
+.text {
+    font-family: "Futura Book";
+    color: #121212;
+    letter-spacing: 0.05em;
+}
+
+.text .identificador, .text .autor {
+    font-size: 1rem;
+    text-align: right;
+}
+
+.text .titulo {
+    font-size: 1.5rem
+}
+
+.text .autorNome {
+    color: #D3ADF7;
+}
+
+.iconLink {
+    display: block;
+    width: 45px;
+    height: 45px;
+    padding: 6px;
+}
+
+.iconLink.edit {
+    background: #73D13D;
+}
+
+.iconLink.view {
+    background: #40A9FF;
+}
+
+.iconLink.delete {
+    background: #FF4D4F;
+}
+
+.iconImg {
+    width: 32px;
+    height: 32px;
+}
+
+@media only screen and (max-width: 870px) {
+    .icons {
+        gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .cardContent {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .listMain {
+       width: 90%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .listMain {
+       width: 100%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .cards {
+       width: 90%;
+    }
+
+    .addContainer {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 570px) {
+    .icons {
+       gap: 20px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .cardContent{
+       padding: 0 20px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .cardContent {
+       height: 200px;
+       flex-direction: column;
+       padding: 30px 0;
+    }
+    .text, .icons {
+        width: 60%;
+    }
+    .icons {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .text .identificador, .text .autor {
+        text-align: left;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .cardContent {
+        padding: 20px 0;
+    }
+    .text, .icons {
+        width: 70%;
+    }
+    .addContainer {
+        padding: 15px 20px;
+    }
+    .iconLink {
+        width: 40px;
+        height: 40px;
+
+    }
+    .iconImg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media only screen and (max-width: 365px) {
+    .text, .icons {
+        width: 80%;
+    }
+    .addText {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .text, .icons {
+        width: 90%;
+    }
+    .addText {
+        letter-spacing: 0px;
+    }
 }

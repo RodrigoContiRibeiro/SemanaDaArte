@@ -1,19 +1,4 @@
- @font-face {
-  font-family: "Futura Book";
-  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf")
-    format("truetype");
-}
 
-@font-face {
-  font-family: "Futura Bold";
-  src: url("http://localhost:8080/fonts/futura/FuturaHeavy.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Futura Italic";
-  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf")
-    format("truetype");
-}
 main.main-pesquisa{
     background: url("http://localhost:8080/images/backgroundUrban.png");
     background-size: cover;
@@ -26,7 +11,7 @@ div.div-pesquisa{
 }
 div.form-field{
     font-family: "Futura Book";
-    background: #ffffff;
+    background: #fafafa;
     padding: 7vh 5.5vw
 }
 .form-group{
@@ -102,5 +87,67 @@ label.form-label-img{
     margin: 1vh 0px;
 }
 
+.uploadImage {
+    position: relative;
 
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    border: 1px black dashed;
+
+}
+
+.imagePreviewContainer {
+    width: 100%;
+    height: 500px;
+    margin-top: 10px;
+}
+
+.imagePreview {
+    height: 95%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.uploadPreview {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fileName {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.form-input-img {
+    display: none;
+}
+
+.folderIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.form-btn-salvar {
+    border: none;
+
+    width: 50%;
+    height: 60px;
+
+    margin: 0 25%;
+
+    background: #121212;
+    color: #fafafa;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
 

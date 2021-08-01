@@ -12,6 +12,8 @@ public interface PesquisaService {
 
     public Pesquisa findById(Long id);
 
+    public Pesquisa findByImage(byte[] image);
+
     public boolean deleteById(Long id);
 
 }

@@ -206,7 +206,7 @@ main.main {
     font-size: 18px;
 }
 
-.ulContato, .ulMembros, .pSenai {
+.ulContato, .ulMembros, .pSenai, .ulNav {
     color: #fafafa;
     font-family: "Futura Book";
     list-style: none;
@@ -215,13 +215,36 @@ main.main {
     font-size: 22px;
 }
 
-.pSenaiTitle, .titleContato, .titleMembros {
+.pSenaiTitle, .titleContato, .titleMembros, .liNav {
     font-weight: bold;
 }
 
-.liContato, .liMembros{
+.liContato, .liMembros, .liNav{
     color: #fafafa;
     line-height: 36px;
+}
+
+.footerNav {
+    margin-bottom: 3rem;
+}
+
+.ulNav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.liNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linkNav {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 1165px) {
@@ -311,7 +334,7 @@ main.main {
     .headerText {
         font-size: 34px
     }
-    .headerContainer02 {
+    .headerContainer02 240{
         font-size: 22px;
     }
 }
@@ -323,11 +346,21 @@ main.main {
          font-size: 16px
     }
 }
+@media only screen and (max-width: 375px) {
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 14px
+    }
+}
 @media only screen and (max-width: 350px) {
     .headerText {
         font-size: 30px
     }
     .headerContainer02 {
         font-size: 18px;
+    }
+}
+@media only screen and (max-width: 325px) {
+    .ulContato, .ulMembros, .pSenai {
+         font-size: 12px
     }
 }

@@ -12,5 +12,3 @@ function mouseLeaverHandler(event) {
     "all 0.25s cubic-bezier(.17,.67,.83,.67)";
   event.relatedTarget.style.opacity = 1;
 }
-
-console.log(imgBtn);
