@@ -36,10 +36,17 @@ public class PesquisaController {
     @PostMapping("pesquisa/save")
     public String save(Model model, Pesquisa pesquisa,
                        @RequestParam("imagem") MultipartFile multipartFile) throws IOException {
-        pesquisa.setImage(multipartFile.getBytes());
+        if(multipartFile.isEmpty()) {
+            System.out.println(Arrays.toString(multipartFile.getBytes()));
+            System.out.println(pesquisa.getId());
+            System.out.println(pesquisaService.findById(pesquisa.getId()));
+            pesquisa.setImage(pesquisaService.findById(pesquisa.getId()).getImage());
+        } else {
+            pesquisa.setImage(multipartFile.getBytes());
+        }
         pesquisaService.save(pesquisa);
         model.addAttribute("pesquisa", pesquisa);
-        return "redirect:/pesquisa/edit/" + pesquisa.getId() + "";
+        return "redirect:/pesquisa/list";
     }
 
     @GetMapping("pesquisa/view/{id}")
@@ -52,7 +59,9 @@ public class PesquisaController {
 
     @GetMapping("pesquisa/edit/{id}")
     public String edit(Model model, @PathVariable Long id) {
-        model.addAttribute("pesquisa", pesquisaService.findById(id));
+        Pesquisa pesquisa = pesquisaService.findById(id);
+        model.addAttribute("pesquisa", pesquisa);
+        model.addAttribute("imagem", Base64.encodeBase64String(pesquisa.getImage()));
         return "pesquisa/edit";
     }
 
@@ -60,10 +69,10 @@ public class PesquisaController {
     public String delete(Model model, @PathVariable Long id) {
         if (pesquisaService.deleteById(id)) {
             model.addAttribute("succ", true);
-            model.addAttribute("msgSucc", "Salvou Corretamente");
+            model.addAttribute("msgSucc", "Deletou corretamente");
         } else {
             model.addAttribute("erro", true);
-            model.addAttribute("msgErro", "Erro ao salvar");
+            model.addAttribute("msgErro", "Erro ao deletar");
         }
         model.addAttribute("pesquisas", pesquisaService.findAll());
         return "pesquisa/list";

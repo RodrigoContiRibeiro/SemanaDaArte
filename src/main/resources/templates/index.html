@@ -26,14 +26,14 @@
 <main class="main">
     <div class="mainContainer">
         <div class="boxButton" id="firstBtnBox">
-            <button class="imgBtn" onclick="window.location='/pesquisa/urbArt'" onmouseenter="mouseEnterHandler(event)"
+            <button class="imgBtn" onclick="window.location='/pesquisa/view/1'" onmouseenter="mouseEnterHandler(event)"
                     onmouseleave="mouseLeaverHandler(event)">
                 Urban Art
             </button>
             <img th:src="@{/images/imgUrbana.png}">
         </div>
         <div class="boxButton" id="secondBtnBox">
-            <button class="imgBtn" onmouseenter="mouseEnterHandler(event)" onmouseleave="mouseLeaverHandler(event)">
+            <button class="imgBtn" onclick="window.location='/pesquisa/view/2'" onmouseenter="mouseEnterHandler(event)" onmouseleave="mouseLeaverHandler(event)">
                 Pop Art
             </button>
             <img th:src="@{/images/imgPop.jpg}">
@@ -41,6 +41,13 @@
     </div>
 </main>
 <div class="footerContainer">
+    <div class="footerNav">
+        <ul class="ulNav">
+            <li class="liNav"><a class="linkNav" th:href="@{/}">Home</a></li>
+            <li class="liNav"><a class="linkNav" th:href="@{/pesquisa/list}">Pesquisas</a></li>
+            <li class="liNav"><a class="linkNav" href="#">Obras</a></li>
+        </ul>
+    </div>
     <div class="footerContent">
         <div class="senaiContainer">
             <img class="imgSenai" th:src="@{/images/sesiSenai.png}">

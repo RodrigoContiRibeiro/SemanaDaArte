@@ -14,7 +14,7 @@
 <header class="header">
     <div class="headerContainer">
         <h1 class="headerText">
-            <a class="headerLink01" th:href="@{/}" style="text-decoration:none;">Semana Da Arte</a>
+            <a class="headerLink01" th:href="@{/}">Semana Da Arte</a>
         </h1>
     </div>
     <div class="headerContainer02">
@@ -23,41 +23,65 @@
         </a>
     </div>
 </header>
-<main>
+<main class="listMain">
     <div th:if="${erro}" class="msgErro">
-        <span th:text="${msgErro}"></span>
+        <span th:text="${msgErro}" class="msgErroText"></span>
     </div>
     <div th:if="${succ}" class="msgSucc">
-        <span th:text="${msgSucc}"></span>
+        <span th:text="${msgSucc}" class="msgSuccText"></span>
     </div>
-    <div class="add">
-        <p>
-            <a th:href="@{add}">
-                Adicionar pesquisa
-            </a>
-        </p>
+    <div class="addContainer">
+        <a th:href="@{/pesquisa/add}" class="addLink">
+            <div class="addContent">
+                <div class="addIcon">
+                    <div class="line horizontal"></div>
+                    <div class="line vertical"></div>
+                </div>
+                <p class="addText">Adicionar pesquisa</p>
+                <div class="addIcon">
+                    <div class="line horizontal"></div>
+                    <div class="line vertical"></div>
+                </div>
+            </div>
+        </a>
     </div>
     <div class="cards">
-        <div th:each="pesquisa : ${pesquisas}" class="cardContainer">
+        <div class="cardContainer"
+             th:each="pesquisa : ${pesquisas}"
+             th:unless="${pesquisa.title}=='Pesquisa sobre arte urbana' or ${pesquisa.title}=='Pesquisa sobre a Pop Art'"
+        >
             <div class="cardContent">
                 <div class="text">
-                    <div class="identificador" th:text="${pesquisa.id}"></div>
-                    <div class="titulo" th:text="${pesquisa.title}"></div>
+                    <div class="identificador" th:text="|ID - ${pesquisa.id}|"></div>
+                    <div class="titulo" th:text="${#strings.abbreviate(pesquisa.title, 22)}"></div>
                     <div class="autor">
                         Escrito por
-                        <span class="autorNome" th:text="${pesquisa.author}"></span>
+                        <span class="autorNome" th:text="${#strings.abbreviate(pesquisa.author, 14)}"></span>
                     </div>
                 </div>
                 <div class="icons">
-                    <div><a th:href="@{edit/{id}(id=${pesquisa.id})}">Editar</a></div>
-                    <div><a th:href="@{view/{id}(id=${pesquisa.id})}">Visualizar</a></div>
-                    <div><a th:href="@{delete/{id}(id=${pesquisa.id})}">Remover</a></div>
+                    <a th:href="@{/pesquisa/edit/{id}(id=${pesquisa.id})}" class="iconLink edit"> <img
+                            class="iconImg"
+                            th:src="@{/images/icon-edit.svg}"> </a>
+                    <a th:href="@{/pesquisa/view/{id}(id=${pesquisa.id})}" class="iconLink view"> <img
+                            class="iconImg"
+                            th:src="@{/images/icon-view.svg}"> </a>
+                    <a th:href="@{/pesquisa/delete/{id}(id=${pesquisa.id})}" class="iconLink delete"> <img
+                            class="iconImg"
+                            th:src="@{/images/icon-delete.svg}"> </a>
                 </div>
             </div>
         </div>
     </div>
 </main>
 <div class="footerContainer">
+    <div class="footerNav">
+        <ul class="ulNav">
+            <li class="liNav"><a class="linkNav" th:href="@{/}">Home</a></li>
+            <li class="liNav"><a class="linkNav" th:href="@{/pesquisa/list}">Pesquisas</a></li>
+            <li class="liNav"><a class="linkNav" href="#">Obras</a></li>
+        </ul>
+    </div>
     <div class="footerContent">
         <div class="senaiContainer">
             <img class="imgSenai" th:src="@{/images/sesiSenai.png}">
