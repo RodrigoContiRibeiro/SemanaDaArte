@@ -1,6 +1,5 @@
 .mainSobre{
-    /* background */
-     background: url("https://marvelous-crater-lake-30689.herokuapp.com/images/urbanArtBg02.jpg");
+     background: url("https://semana-da-arte-spring-postgres.herokuapp.com/images/urbanArtBg02.jpg");
      background-size: cover;
      height: auto;
  }
