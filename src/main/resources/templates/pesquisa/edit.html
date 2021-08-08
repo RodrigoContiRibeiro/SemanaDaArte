@@ -34,6 +34,12 @@
         <form action="#" th:action="@{/pesquisa/save}" method="post" th:object="${pesquisa}"
               enctype="multipart/form-data" class="form-pesquisa">
             <div class="form-field">
+                <div th:if="${erro}" class="msgErro">
+                    <p th:text="${msgErro}" class="msgErroText"></p>
+                </div>
+                <div th:if="${succ}" class="msgSucc">
+                    <p th:text="${msgSucc}" class="msgSuccText"></p>
+                </div>
                 <div class="form-title">editar uma pesquisa</div>
                 <input type="number" readonly th:field="*{id}" class="input-id" style="display: none">
                 <div class="form-group">

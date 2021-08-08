@@ -25,10 +25,17 @@
 </header>
 <main class="main-pesquisa">
     <div class="div-pesquisa">
-        <form action="#" th:action="@{/pesquisa/save}" method="post" th:object="${pesquisa}" enctype="multipart/form-data" class="form-pesquisa">
+        <form action="#" th:action="@{/pesquisa/save}" method="post" th:object="${pesquisa}"
+              enctype="multipart/form-data" class="form-pesquisa">
             <div class="form-field">
+                <div th:if="${erro}" class="msgErro">
+                    <p th:utext="${msgErro}" class="msgErroText"></p>
+                </div>
+                <div th:if="${succ}" class="msgSucc">
+                    <p th:utext="${msgSucc}" class="msgSuccText"></p>
+                </div>
                 <div class="form-title">adicionar uma pesquisa</div>
-                <input type="number" disabled th:field="*{id}" class="input-id" >
+                <input type="number" disabled th:field="*{id}" class="input-id">
                 <div class="form-group">
                     <input type="text" th:field="*{author}" required class="form-input" id="autor" placeholder="Autor">
                     <label class="form-label" for="autor">Autor</label>
@@ -38,7 +45,8 @@
                     <label class="form-label" for="title">Titulo</label>
                 </div>
                 <div class="form-group">
-                    <textarea th:field="*{paragraphs}" required class="form-input" id="texto" placeholder="Texto" rows="6"></textarea>
+                    <textarea th:field="*{paragraphs}" required class="form-input" id="texto" placeholder="Texto"
+                              rows="6"></textarea>
                     <label class="form-label" for="texto">Texto</label>
                 </div>
                 <div class="form-group">

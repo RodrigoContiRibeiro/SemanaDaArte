@@ -6,24 +6,6 @@
     padding: 2rem 0;
 }
 
-.msgSucc, .msgErro {
-    width: 80%;
-    margin: 1rem auto;
-    text-align: center;
-}
-
-.msgErroText, .msgSuccText {
-    font-family: "Futura Book";
-    font-size: 1.5rem;
-}
-
-.msgSuccText {
-    color: #73d13d;
-}
-
-.msgErroText {
-    color: #ff4d4f;
-}
 
 .addContainer {
     width: 80%;
