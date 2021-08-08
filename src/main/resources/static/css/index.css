@@ -246,6 +246,24 @@ main.main {
     font-size: 1.5rem;
     text-decoration: none;
 }
+.msgSucc, .msgErro {
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.msgErroText, .msgSuccText {
+    font-family: "Futura Book";
+    font-size: 1.5rem;
+}
+
+.msgSuccText {
+    color: #73d13d;
+}
+
+.msgErroText {
+    color: #ff4d4f;
+}
 
 @media only screen and (max-width: 1165px) {
     .senaiContainer {

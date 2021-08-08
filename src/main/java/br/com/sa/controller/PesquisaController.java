@@ -36,38 +36,51 @@ public class PesquisaController {
     @PostMapping("pesquisa/save")
     public String save(Model model, Pesquisa pesquisa,
                        @RequestParam("imagem") MultipartFile multipartFile) throws IOException {
-        if(multipartFile.isEmpty()) {
-            System.out.println(Arrays.toString(multipartFile.getBytes()));
-            System.out.println(pesquisa.getId());
-            System.out.println(pesquisaService.findById(pesquisa.getId()));
+        String validacao = pesquisaService.validarPesquisa(pesquisa, multipartFile.isEmpty());
+
+        if (multipartFile.isEmpty() && pesquisa.getId() != null) {
+            //Edit page only
             pesquisa.setImage(pesquisaService.findById(pesquisa.getId()).getImage());
         } else {
             pesquisa.setImage(multipartFile.getBytes());
         }
-        pesquisaService.save(pesquisa);
-        model.addAttribute("pesquisa", pesquisa);
-        return "redirect:/pesquisa/list";
+        if (validacao.equals("")) {
+            pesquisa.setSlug(pesquisaService.gerarSlug(pesquisa.getTitle()));
+            pesquisaService.save(pesquisa);
+            return "redirect:/pesquisa/list";
+        } else {
+            model.addAttribute("erro", true);
+            model.addAttribute("msgErro", validacao);
+            model.addAttribute("pesquisa", pesquisa);
+            if (pesquisa.getId() != null) {
+                model.addAttribute("imagem", Base64.encodeBase64String(pesquisa.getImage()));
+                return "pesquisa/edit";
+            } else {
+                return "pesquisa/add";
+            }
+        }
     }
 
-    @GetMapping("pesquisa/view/{id}")
-    public String view(Model model, @PathVariable Long id) {
-        Pesquisa pesquisa = pesquisaService.findById(id);
+    @GetMapping("pesquisa/{slug}")
+    public String view(Model model, @PathVariable String slug) {
+        Pesquisa pesquisa = pesquisaService.findBySlug(slug);
         model.addAttribute("pesquisa", pesquisa);
         model.addAttribute("imagem", Base64.encodeBase64String(pesquisa.getImage()));
         return "pesquisa/view";
     }
 
-    @GetMapping("pesquisa/edit/{id}")
-    public String edit(Model model, @PathVariable Long id) {
-        Pesquisa pesquisa = pesquisaService.findById(id);
+    @GetMapping("pesquisa/edit/{slug}")
+    public String edit(Model model, @PathVariable String slug) {
+        Pesquisa pesquisa = pesquisaService.findBySlug(slug);
         model.addAttribute("pesquisa", pesquisa);
         model.addAttribute("imagem", Base64.encodeBase64String(pesquisa.getImage()));
+        System.out.println(model.getAttribute("imagem"));
         return "pesquisa/edit";
     }
 
-    @GetMapping("pesquisa/delete/{id}")
-    public String delete(Model model, @PathVariable Long id) {
-        if (pesquisaService.deleteById(id)) {
+    @GetMapping("pesquisa/delete/{slug}")
+    public String delete(Model model, @PathVariable String slug) {
+        if (pesquisaService.deleteBySlug(slug)) {
             model.addAttribute("succ", true);
             model.addAttribute("msgSucc", "Deletou corretamente");
         } else {

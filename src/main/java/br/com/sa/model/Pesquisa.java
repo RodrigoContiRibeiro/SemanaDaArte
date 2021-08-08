@@ -3,6 +3,7 @@ package br.com.sa.model;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.Arrays;
 
 @Entity(name = "pesquisa")
 public class Pesquisa {
@@ -19,6 +20,9 @@ public class Pesquisa {
 
     @Column(name = "paragrafos", columnDefinition = "TEXT", nullable = false)
     private String paragraphs;
+
+    @Column(name = "slug", length = 150, nullable = true)
+    private String slug;
 
     @Lob
     @Type(type="org.hibernate.type.BinaryType")
@@ -57,6 +61,14 @@ public class Pesquisa {
         this.paragraphs = paragraphs;
     }
 
+    public String getSlug() {
+        return slug;
+    }
+
+    public void setSlug(String slug) {
+        this.slug = slug;
+    }
+
     public byte[] getImage() {
         return image;
     }
@@ -65,7 +77,6 @@ public class Pesquisa {
         this.image = image;
     }
 
-
     @Override
     public String toString() {
         return "Pesquisa{" +
@@ -73,6 +84,13 @@ public class Pesquisa {
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", paragraphs='" + paragraphs + '\'' +
+                ", slug='" + slug + '\'' +
+                ", image=" + Arrays.toString(image) +
                 '}';
     }
+
+    @Override
+    public int hashCode() {
+        return author.hashCode() * title.hashCode() * paragraphs.hashCode();
+    };
 }

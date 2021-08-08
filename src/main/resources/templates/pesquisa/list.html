@@ -59,13 +59,13 @@
                     </div>
                 </div>
                 <div class="icons">
-                    <a th:href="@{/pesquisa/edit/{id}(id=${pesquisa.id})}" class="iconLink edit"> <img
+                    <a th:href="@{/pesquisa/edit/{slug}(slug=${pesquisa.slug})}" class="iconLink edit"> <img
                             class="iconImg"
                             th:src="@{/images/icon-edit.svg}"> </a>
-                    <a th:href="@{/pesquisa/view/{id}(id=${pesquisa.id})}" class="iconLink view"> <img
+                    <a th:href="@{/pesquisa/{slug}(slug=${pesquisa.slug})}" class="iconLink view"> <img
                             class="iconImg"
                             th:src="@{/images/icon-view.svg}"> </a>
-                    <a th:href="@{/pesquisa/delete/{id}(id=${pesquisa.id})}" class="iconLink delete"> <img
+                    <a th:href="@{/pesquisa/delete/{slug}(slug=${pesquisa.slug})}" class="iconLink delete"> <img
                             class="iconImg"
                             th:src="@{/images/icon-delete.svg}"> </a>
                 </div>
