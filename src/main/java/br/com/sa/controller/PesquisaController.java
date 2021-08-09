@@ -78,9 +78,9 @@ public class PesquisaController {
         return "pesquisa/edit";
     }
 
-    @GetMapping("/pesquisa/delete/{slug}")
-    public String delete(Model model, @PathVariable String slug) {
-        if (pesquisaService.deleteBySlug(slug)) {
+    @GetMapping("/pesquisa/delete/{id}")
+    public String delete(Model model, @PathVariable Long id) {
+        if (pesquisaService.deleteById(id)) {
             model.addAttribute("succ", true);
             model.addAttribute("msgSucc", "Deletou corretamente");
         } else {

@@ -1,4 +1,4 @@
-package br.com.sa.config;
+/*package br.com.sa.config;
 
 import com.zaxxer.hikari.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,4 +18,4 @@ public class DatabaseConfig {
         config.setJdbcUrl(dbUrl);
         return new HikariDataSource(config);
     }
-}
+}*/

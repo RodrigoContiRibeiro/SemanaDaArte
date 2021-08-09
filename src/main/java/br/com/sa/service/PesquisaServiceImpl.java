@@ -5,11 +5,11 @@ import br.com.sa.repository.PesquisaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.thymeleaf.util.StringUtils;
 
 import java.text.Normalizer;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -44,8 +44,14 @@ public class PesquisaServiceImpl implements PesquisaService {
     }
 
     @Override
-    public Pesquisa findByImage(byte[] image) {
-        return pesquisaRepo.findByImage(image);
+    public boolean deleteById(Long id) {
+        try {
+            pesquisaRepo.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
     @Override
@@ -56,11 +62,6 @@ public class PesquisaServiceImpl implements PesquisaService {
     @Override
     public Pesquisa findBySlug(String slug) {
         return pesquisaRepo.findBySlug(slug);
-    }
-
-    @Override
-    public List<Pesquisa> findAllBySlug(String slug) {
-        return pesquisaRepo.findAllBySlug(slug);
     }
 
     @Override
@@ -90,16 +91,5 @@ public class PesquisaServiceImpl implements PesquisaService {
         normalizedTitle = normalizedTitle.replaceAll("\\p{M}", "");
         normalizedTitle = normalizedTitle.replaceAll("\\p{Punct}", "");
         return normalizedTitle.toLowerCase().replace(" ", "-");
-    }
-
-    @Override
-    public boolean deleteBySlug(String slug) {
-        try {
-            pesquisaRepo.deleteBySlug(slug);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-        return true;
     }
 }

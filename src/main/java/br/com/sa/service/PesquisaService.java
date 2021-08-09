@@ -1,9 +1,11 @@
 package br.com.sa.service;
 
 import br.com.sa.model.Pesquisa;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface PesquisaService {
 
     public List<Pesquisa> findAll();
@@ -12,15 +14,11 @@ public interface PesquisaService {
 
     public Pesquisa findById(Long id);
 
-    public boolean deleteBySlug(String slug);
-
-    public Pesquisa findByImage(byte[] image);
+    public boolean deleteById(Long id);
 
     public Pesquisa findByTitleIgnoreCase(String title);
 
     public Pesquisa findBySlug(String slug);
-
-    public List<Pesquisa> findAllBySlug(String slug);
 
     public String validarPesquisa(Pesquisa pesquisa, boolean isImageEmpty);
 
