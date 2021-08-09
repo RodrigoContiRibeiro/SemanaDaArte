@@ -21,19 +21,19 @@ public class PesquisaController {
     @Autowired
     PesquisaServiceImpl pesquisaService;
 
-    @GetMapping("pesquisa/list")
+    @GetMapping("/pesquisa/list")
     public String list(Model model) {
         model.addAttribute("pesquisas", pesquisaService.findAll());
         return "pesquisa/list";
     }
 
-    @GetMapping("pesquisa/add")
+    @GetMapping("/pesquisa/add")
     public String add(Model model) {
         model.addAttribute("pesquisa", new Pesquisa());
         return "pesquisa/add";
     }
 
-    @PostMapping("pesquisa/save")
+    @PostMapping("/pesquisa/save")
     public String save(Model model, Pesquisa pesquisa,
                        @RequestParam("imagem") MultipartFile multipartFile) throws IOException {
         String validacao = pesquisaService.validarPesquisa(pesquisa, multipartFile.isEmpty());
@@ -61,7 +61,7 @@ public class PesquisaController {
         }
     }
 
-    @GetMapping("pesquisa/{slug}")
+    @GetMapping("/pesquisa/{slug}")
     public String view(Model model, @PathVariable String slug) {
         Pesquisa pesquisa = pesquisaService.findBySlug(slug);
         model.addAttribute("pesquisa", pesquisa);
@@ -69,7 +69,7 @@ public class PesquisaController {
         return "pesquisa/view";
     }
 
-    @GetMapping("pesquisa/edit/{slug}")
+    @GetMapping("/pesquisa/edit/{slug}")
     public String edit(Model model, @PathVariable String slug) {
         Pesquisa pesquisa = pesquisaService.findBySlug(slug);
         model.addAttribute("pesquisa", pesquisa);
@@ -78,7 +78,7 @@ public class PesquisaController {
         return "pesquisa/edit";
     }
 
-    @GetMapping("pesquisa/delete/{slug}")
+    @GetMapping("/pesquisa/delete/{slug}")
     public String delete(Model model, @PathVariable String slug) {
         if (pesquisaService.deleteBySlug(slug)) {
             model.addAttribute("succ", true);
