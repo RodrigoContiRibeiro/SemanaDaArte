@@ -1,5 +1,5 @@
 .mainSobre{
-     background: url("http://localhost:8080/images/urbanArtBg02.jpg");
+     background: url("http://ec2-54-197-216-25.compute-1.amazonaws.com:8080/images/urbanArtBg02.jpg");
      background-size: cover;
      height: auto;
  }
