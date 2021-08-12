@@ -11,19 +11,19 @@
 @font-face {
   font-family: "Futura Book";
   /*src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBook.ttf") format("truetype");*/
-  src: url("http://ec2-18-234-124-69.compute-1.amazonaws.com:8080/fonts/futura/futuraBook.ttf") format("truetype");
+  src: url("http://localhost:8080/fonts/futura/futuraBook.ttf") format("truetype");
 
 }
 
 @font-face {
   font-family: "Futura Bold";
-  src: url("http://ec2-18-234-124-69.compute-1.amazonaws.com:8080/fonts/futura/futuraBold.ttf") format("truetype");
+  src: url("http://localhost:8080/fonts/futura/futuraBold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Futura Italic";
   /*src: url("https://marvelous-crater-lake-30689.herokuapp.com/fonts/futura/futuraBookItalic.ttf") format("truetype");*/
-  src: url("http://ec2-18-234-124-69.compute-1.amazonaws.com:8080/fonts/futura/futuraBookItalic.ttf") format("truetype");
+  src: url("http://localhost:8080/fonts/futura/futuraBookItalic.ttf") format("truetype");
 
 }
 
@@ -114,14 +114,14 @@ main.main {
 }
 
 .mainContainer #firstBtnBox{
-    background: url("http://ec2-18-234-124-69.compute-1.amazonaws.com:8080/images/imgUrbana.png");
+    background: url("http://localhost:8080/images/imgUrbana.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
 .mainContainer #secondBtnBox {
-    background: url("http://ec2-18-234-124-69.compute-1.amazonaws.com:8080/images/imgPop.jpg");
+    background: url("http://localhost:8080/images/imgPop.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
